@@ -1,0 +1,13 @@
+#!/bin/bash
+description "Saving Piget repositories"
+cd /opt/piget
+for i in */.git; do ( echo $i; cd $i/..; gitPushAll pull; ); done
+description "Saving kana core"
+cd /opt/piget/kana
+for i in */.git; do ( echo $i; cd $i/..; gitPushAll pull; ); done
+description "Saving kana plugins/objects"
+cd /opt/piget/kana/www/plugins
+for i in */.git; do ( echo $i; cd $i/..; gitPushAll pull; ); done
+description "Saving kana plugins/views"
+cd /opt/piget/kana/www/views
+for i in */.git; do ( echo $i; cd $i/..; gitPushAll pull; ); done
