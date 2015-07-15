@@ -3,7 +3,7 @@ description "Saving Piget repositories"
 cd /opt/piget
 for i in */.git; do ( messagebox $i; cd $i/..; gitPushAll pull; ); done
 
-if [ -z /opt/piget/kana ];then
+if [ -d /opt/piget/kana ];then
 description "Saving kana core"
 cd /opt/piget/kana
 for i in */.git; do ( messagebox $i; cd $i/..; gitPushAll pull; ); done
