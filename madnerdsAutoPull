@@ -1,7 +1,7 @@
 #!/bin/bash
 description "Saving Piget repositories"
 cd /opt/piget
-for i in */.git; do ( echo $i; cd $i/..; gitPushAll pull; ); done
+for i in */.git; do ( messagebox $i; cd $i/..; gitPushAll pull; ); done
 
 if [ -z /opt/piget/kana ];then
 description "Saving kana core"
