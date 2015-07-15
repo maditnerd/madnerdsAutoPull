@@ -2,18 +2,18 @@
 description "Saving Piget repositories"
 cd /opt/piget
 for i in */.git; do ( echo $i; cd $i/..; gitPushAll pull; ); done
+
+if [ -z /opt/piget/kana ];then
 description "Saving kana core"
 cd /opt/piget/kana
-for i in */.git; do ( echo $i; cd $i/..; gitPushAll pull; ); done
+for i in */.git; do ( messagebox $i; cd $i/..; gitPushAll pull; ); done
 description "Saving kana plugins/objects"
 cd /opt/piget/kana/www/plugins/objects
-for i in */.git; do ( echo $i; cd $i/..; gitPushAll pull; ); done
+for i in */.git; do ( messagebox $i; cd $i/..; gitPushAll pull; ); done
 description "Saving kana plugins/views"
 cd /opt/piget/kana/www/plugins/views
-for i in */.git; do ( echo $i; cd $i/..; gitPushAll pull; ); done
+for i in */.git; do ( messagebox $i; cd $i/..; gitPushAll pull; ); done
 description "Saving kana plugins/sensors"
 cd /opt/piget/kana/www/plugins/sensors
-for i in */.git; do ( echo $i; cd $i/..; gitPushAll pull; ); done
-description "Saving kana plugins/sensors"
-cd /opt/piget/kana/www/plugins/sensors
-for i in */.git; do ( echo $i; cd $i/..; gitPushAll pull; ); done
+for i in */.git; do ( messagebox $i; cd $i/..; gitPushAll pull; ); done
+fi
