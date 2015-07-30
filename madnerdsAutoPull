@@ -1,22 +1,22 @@
 #!/bin/bash
 /show/description "Saving Piget repositories"
 cd /opt/piget
-for i in */.git; do ( /show/listecho $i; cd $i/..; /do/git/pushAll; ); done
+for i in */.git; do ( /show/description $i; cd $i/..; /do/git/pushAll; ); done
 
 if [ -d /opt/piget/kana/www ];then
 	/show/description "Saving kana core"
 	cd /opt/piget/kana
-	for i in */.git; do ( /show/listecho $i; cd $i/..; /do/git/pushAll; ); done
+	for i in */.git; do ( /show/description $i; cd $i/..; /do/git/pushAll; ); done
 
 	/show/description "Saving kana plugins/objects"
 	cd /opt/piget/kana/www/plugins/objects
-	for i in */.git; do ( /show/listecho $i; cd $i/..; /do/git/pushAll; ); done
+	for i in */.git; do ( /show/description $i; cd $i/..; /do/git/pushAll; ); done
 
 	/show/description "Saving kana plugins/views"
 	cd /opt/piget/kana/www/plugins/views
-	for i in */.git; do ( /show/listecho $i; cd $i/..; /do/git/pushAll; ); done
+	for i in */.git; do ( /show/description $i; cd $i/..; /do/git/pushAll; ); done
 
 	/show/description "Saving kana plugins/sensors"
 	cd /opt/piget/kana/www/plugins/sensors
-	for i in */.git; do ( /show/listecho $i; cd $i/..; /do/git/pushAll; ); done
+	for i in */.git; do ( /show/description $i; cd $i/..; /do/git/pushAll; ); done
 fi
